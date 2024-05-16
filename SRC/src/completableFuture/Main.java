@@ -2,17 +2,20 @@ package completableFuture;
 
 import completableFuture.exercises.Basic;
 
-import java.util.concurrent.ExecutionException;
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) {
 
         try {
 
             Basic exerciseBasic = new Basic();
 
-            System.out.println(exerciseBasic.returnsMessage("Hello World!"));
-            System.out.println(exerciseBasic.performingActionsAfterCompletion("Hello World!"));
+            List<String> results = exerciseBasic.insanePerformanceTest();
+            for (String result : results) {
+                System.out.println(result);
+            }
+
         } catch(Exception e) {
             System.out.println(e.getMessage());
         }
